@@ -30,15 +30,15 @@ body {
     radial-gradient(circle at 17px 23px, rgb(255 255 255 / 62%) 0 0.65px, transparent 1px),
     radial-gradient(circle at 31px 11px, rgb(187 218 255 / 48%) 0 0.55px, transparent 0.95px),
     radial-gradient(circle at 8px 29px, rgb(229 213 255 / 42%) 0 0.5px, transparent 0.9px),
-    radial-gradient(ellipse at 49% 52%, rgb(126 84 226 / 27%), transparent 31%),
-    radial-gradient(ellipse at 58% 45%, rgb(47 184 221 / 18%), transparent 39%),
-    radial-gradient(ellipse at 16% 14%, rgb(139 92 246 / 40%), transparent 38%),
-    radial-gradient(ellipse at 83% 22%, rgb(34 211 238 / 26%), transparent 34%),
-    radial-gradient(ellipse at 78% 88%, rgb(251 113 133 / 20%), transparent 36%),
-    radial-gradient(ellipse at 15% 85%, rgb(45 212 191 / 17%), transparent 34%),
-    linear-gradient(135deg, #11101f 0%, #17152b 45%, #101a29 100%);
+    radial-gradient(ellipse at 49% 52%, rgb(151 91 245 / 38%), transparent 31%),
+    radial-gradient(ellipse at 58% 45%, rgb(43 205 239 / 30%), transparent 39%),
+    radial-gradient(ellipse at 16% 14%, rgb(194 86 233 / 48%), transparent 38%),
+    radial-gradient(ellipse at 83% 22%, rgb(36 224 231 / 38%), transparent 34%),
+    radial-gradient(ellipse at 78% 88%, rgb(255 105 139 / 30%), transparent 36%),
+    radial-gradient(ellipse at 15% 85%, rgb(49 224 190 / 26%), transparent 34%),
+    linear-gradient(135deg, #10151f 0%, #21172e 45%, #101f2b 100%);
   background-size: 53px 67px, 71px 83px, 31px 41px, 145% 145%, 155% 155%, 160% 160%, 150% 150%, 155% 155%, 150% 150%, 100% 100%;
-  animation: galaxy-drift 36s ease-in-out infinite alternate;
+  animation: galaxy-drift 24s ease-in-out infinite alternate;
 }
 
 body::before {
@@ -67,13 +67,13 @@ body::before {
       rgb(160 106 231 / 20%) 316deg,
       rgb(80 176 219 / 11%) 328deg,
       transparent 340deg 360deg);
-  filter: blur(24px);
-  opacity: 0.9;
+  filter: blur(20px) saturate(145%);
+  opacity: 1;
   transform: perspective(900px) rotateX(58deg) rotateZ(-12deg) scale(1.25);
   transform-origin: center;
   -webkit-mask-image: radial-gradient(ellipse at center, #000 0 8%, rgb(0 0 0 / 88%) 28%, transparent 69%);
   mask-image: radial-gradient(ellipse at center, #000 0 8%, rgb(0 0 0 / 88%) 28%, transparent 69%);
-  animation: galaxy-rotation 80s linear infinite, nebula-glow 9s ease-in-out infinite alternate;
+  animation: galaxy-rotation 52s linear infinite, nebula-glow 6s ease-in-out infinite alternate;
 }
 
 body::after {
@@ -128,7 +128,7 @@ body::after {
     radial-gradient(circle at 87% 96%, rgb(255 255 255 / 58%) 0 0.65px, transparent 1.4px),
     radial-gradient(circle at 93% 25%, rgb(191 228 255 / 60%) 0 0.65px, transparent 1.4px),
     radial-gradient(circle at 99% 79%, rgb(255 255 255 / 56%) 0 0.65px, transparent 1.4px);
-  animation: star-twinkle 4s ease-in-out infinite alternate, starfield-depth 22s ease-in-out infinite alternate;
+  animation: star-twinkle 3s ease-in-out infinite alternate, starfield-depth 16s ease-in-out infinite alternate;
 }
 
 @keyframes galaxy-rotation {
