@@ -36,6 +36,7 @@ const formulas = [
     equation: "(a + b)² = a² + 2ab + b²",
     description: "Expand a binomial squared.",
     example: "(2+3)^2",
+    steps: ["Rewrite the square as (a + b)(a + b).", "Distribute each term: a² + ab + ab + b².", "Combine like terms: a² + 2ab + b²."],
   },
   {
     id: "difference-of-squares",
@@ -44,6 +45,7 @@ const formulas = [
     equation: "a² − b² = (a − b)(a + b)",
     description: "Factor the difference between two squares.",
     example: "7^2-3^2",
+    steps: ["Write each term as a product: a² = a·a and b² = b·b.", "Factor the expression into the conjugates (a − b)(a + b).", "Expand to check: a² + ab − ab − b² = a² − b²."],
   },
   {
     id: "power-product",
@@ -52,6 +54,7 @@ const formulas = [
     equation: "aᵐ × aⁿ = aᵐ⁺ⁿ",
     description: "When multiplying equal bases, add the exponents.",
     example: "2^3*2^4",
+    steps: ["Expand each power into repeated factors of a.", "Join the two groups of equal factors.", "Count all factors: m + n, so the product is aᵐ⁺ⁿ."],
   },
   {
     id: "pythagorean-identity",
@@ -60,6 +63,7 @@ const formulas = [
     equation: "sin²(x) + cos²(x) = 1",
     description: "A fundamental identity; x follows the selected DEG/RAD mode.",
     example: "sin(30)^2+cos(30)^2",
+    steps: ["On the unit circle, a point has coordinates (cos x, sin x).", "The unit circle equation is u² + v² = 1.", "Substitute u = cos x and v = sin x."],
   },
   {
     id: "degrees-to-radians",
@@ -68,6 +72,7 @@ const formulas = [
     equation: "radians = degrees × π ÷ 180",
     description: "Convert an angle in degrees to radians.",
     example: "180*pi/180",
+    steps: ["A full turn is 360° or 2π radians.", "Divide both values by 360: 1° = 2π/360 radians.", "Simplify to π/180 radians per degree."],
   },
   {
     id: "pythagorean-theorem",
@@ -76,6 +81,7 @@ const formulas = [
     equation: "c = √(a² + b²)",
     description: "Find a right triangle's hypotenuse from its two legs.",
     example: "sqrt(3^2+4^2)",
+    steps: ["Start with the law of cosines: c² = a² + b² − 2ab cos(C).", "For a right angle, C = 90° and cos(C) = 0.", "So c² = a² + b²; take the positive square root."],
   },
   {
     id: "circle-area",
@@ -84,6 +90,7 @@ const formulas = [
     equation: "A = πr²",
     description: "Find the area using the circle's radius r.",
     example: "pi*5^2",
+    steps: ["Split the circle into many thin sectors.", "Rearrange them into an approximate rectangle with height r.", "Its width approaches half the circumference, πr, so A = πr × r."],
   },
   {
     id: "circle-circumference",
@@ -92,6 +99,7 @@ const formulas = [
     equation: "C = 2πr",
     description: "Find the distance around a circle using its radius r.",
     example: "2*pi*5",
+    steps: ["The ratio of a circle's circumference to its diameter is π.", "The diameter is twice the radius: d = 2r.", "Substitute d into C = πd to get C = 2πr."],
   },
   {
     id: "log-product",
@@ -100,6 +108,7 @@ const formulas = [
     equation: "log₁₀(ab) = log₁₀(a) + log₁₀(b)",
     description: "The logarithm of a product is the sum of the logarithms.",
     example: "log(10*100)",
+    steps: ["Let log₁₀(a) = m and log₁₀(b) = n.", "Then a = 10ᵐ and b = 10ⁿ.", "Their product is 10ᵐ × 10ⁿ = 10ᵐ⁺ⁿ, so its log is m + n."],
   },
   {
     id: "natural-log-exponential",
@@ -108,6 +117,7 @@ const formulas = [
     equation: "ln(eˣ) = x",
     description: "The natural logarithm and exponential function undo one another.",
     example: "ln(e^2)",
+    steps: ["The natural logarithm is logarithm base e.", "A logarithm asks which exponent produces its input.", "Since eˣ has exponent x, ln(eˣ) = x."],
   },
   {
     id: "simple-linear-regression",
@@ -116,6 +126,147 @@ const formulas = [
     equation: "ŷ = b₀ + b₁x; b₁ = [nΣxy − (Σx)(Σy)] / [nΣx² − (Σx)²]; b₀ = (Σy − b₁Σx) / n",
     description: "Fit paired values, inspect R², and predict y from an x value.",
     example: "1, 2, 3 → 4, 5, 8",
+    steps: ["Measure how x and y vary together with the slope b₁.", "Choose the intercept b₀ so the line passes through (mean x, mean y).", "These least-squares coefficients minimize the sum of squared residuals."],
+  },
+  {
+    id: "calculus-power-rule",
+    title: "Derivative power rule",
+    category: "calculus",
+    equation: "d/dx(xⁿ) = n·xⁿ⁻¹",
+    description: "Differentiate a power function, then evaluate it at a chosen x.",
+    example: "3*2^2",
+    exampleLabel: "Try derivative of x³ at x = 2 → 12",
+    steps: ["Start with f(x) = xⁿ.", "Bring the exponent n in front as a multiplier.", "Reduce the exponent by one: f′(x) = n·xⁿ⁻¹."],
+  },
+  {
+    id: "calculus-constant-multiple-rule",
+    title: "Constant multiple rule",
+    category: "calculus",
+    equation: "d/dx[c·f(x)] = c·f′(x)",
+    description: "A constant factor stays in front when differentiating.",
+    example: "4*(3*2^2)",
+    exampleLabel: "Try derivative of 4x³ at x = 2 → 48",
+    steps: ["Write the constant c outside the difference quotient.", "The remaining limit is the derivative f′(x).", "Therefore the result is c·f′(x)."],
+  },
+  {
+    id: "calculus-sum-rule",
+    title: "Derivative sum rule",
+    category: "calculus",
+    equation: "d/dx[f(x) + g(x)] = f′(x) + g′(x)",
+    description: "Differentiate each term separately, then add the results.",
+    example: "2*2+3*2^2",
+    exampleLabel: "Try derivative of x² + x³ at x = 2 → 16",
+    steps: ["Apply the difference quotient to f(x) + g(x).", "Split the numerator into the change in f and the change in g.", "Take both limits: f′(x) + g′(x)."],
+  },
+  {
+    id: "calculus-product-rule",
+    title: "Product rule",
+    category: "calculus",
+    equation: "d/dx[f·g] = f′·g + f·g′",
+    description: "Differentiate a product using both functions and their derivatives.",
+    example: "2*2*2^3+2^2*3*2^2",
+    exampleLabel: "Try derivative of x²·x³ at x = 2 → 80",
+    steps: ["Start with the difference quotient for f(x)g(x).", "Add and subtract f(x+h)g(x) in the numerator.", "After dividing and taking the limit, the terms become f′g + fg′."],
+  },
+  {
+    id: "calculus-chain-rule",
+    title: "Chain rule",
+    category: "calculus",
+    equation: "d/dx f(g(x)) = f′(g(x))·g′(x)",
+    description: "Differentiate an outer function, then multiply by the inner derivative.",
+    example: "2*(3*2+1)*3",
+    exampleLabel: "Try derivative of (3x + 1)² at x = 2 → 42",
+    steps: ["Identify the inner function u = g(x) and outer function f(u).", "Differentiate the outer function with respect to u.", "Multiply by du/dx, the derivative of the inner function."],
+  },
+  {
+    id: "calculus-sine-derivative",
+    title: "Derivative of sine",
+    category: "calculus",
+    equation: "d/dx(sin x) = cos x (x in radians)",
+    description: "The derivative of sine is cosine when angles are measured in radians.",
+    example: "cos(0)",
+    exampleLabel: "Try derivative of sin x at x = 0 → 1",
+    steps: ["Use the limit definition of the derivative.", "Apply the sine addition identity to sin(x + h).", "Using lim sin(h)/h = 1 gives cos(x)."],
+  },
+  {
+    id: "calculus-power-integral",
+    title: "Power rule for integrals",
+    category: "calculus",
+    equation: "∫xⁿ dx = xⁿ⁺¹/(n + 1) + C, n ≠ −1",
+    description: "Find an antiderivative of a power function.",
+    example: "2^4/4",
+    exampleLabel: "Try antiderivative of x³ at x = 2 → 4 (C = 0)",
+    steps: ["Reverse the derivative power rule.", "Increase the exponent by one: n becomes n + 1.", "Divide by the new exponent so differentiating returns xⁿ; add C."],
+  },
+  {
+    id: "calculus-fundamental-theorem",
+    title: "Fundamental theorem of calculus",
+    category: "calculus",
+    equation: "∫ₐᵇ f(x) dx = F(b) − F(a), where F′ = f",
+    description: "Evaluate a definite integral using an antiderivative at both bounds.",
+    example: "5^2/2-2^2/2",
+    exampleLabel: "Try integral of x from 2 to 5 → 10.5",
+    steps: ["Find an antiderivative F such that F′(x) = f(x).", "Evaluate F at the upper bound b and lower bound a.", "Subtract: F(b) − F(a)."],
+  },
+  {
+    id: "calculus-limit-derivative",
+    title: "Derivative from a limit",
+    category: "calculus",
+    equation: "f′(a) = limₕ→₀ [f(a + h) − f(a)]/h",
+    description: "Approximate the slope of x² near x = 3 with a small positive h.",
+    example: "((3.0001)^2-3^2)/0.0001",
+    exampleLabel: "Approximate derivative of x² at x = 3 → 6.0001",
+    steps: ["Choose a point a and a small change h.", "Compute the average slope [f(a+h) − f(a)]/h.", "As h approaches zero, the average slope approaches f′(a)."],
+  },
+  {
+    id: "calculus-limit-continuity",
+    title: "Limit of a continuous function",
+    category: "calculus",
+    equation: "limₓ→ₐ f(x) = f(a), when f is continuous at a",
+    description: "For a continuous function, evaluate the limit by direct substitution.",
+    example: "3^2",
+    exampleLabel: "Try lim x→3 of x² → 9",
+    steps: ["Check that the function has no break at x = a.", "For a continuous function, nearby values approach its value at a.", "Substitute x = a directly: f(a)."],
+  },
+  {
+    id: "probability-complement",
+    title: "Complement rule",
+    category: "probability",
+    equation: "P(not A) = 1 − P(A)",
+    description: "Find the probability that an event does not happen.",
+    example: "1-0.35",
+    exampleLabel: "If P(A) = 0.35, find P(not A) → 0.65",
+    steps: ["An event either happens or does not happen.", "These outcomes do not overlap and cover all possibilities.", "Their probabilities sum to 1, so P(not A) = 1 − P(A)."],
+  },
+  {
+    id: "probability-addition-rule",
+    title: "Addition rule",
+    category: "probability",
+    equation: "P(A ∪ B) = P(A) + P(B) − P(A ∩ B)",
+    description: "Find the chance that A or B occurs, including overlap only once.",
+    example: "0.4+0.3-0.1",
+    exampleLabel: "If P(A)=0.4, P(B)=0.3, overlap=0.1 → 0.6",
+    steps: ["Add P(A) and P(B) to count outcomes in either event.", "The overlap P(A ∩ B) was counted twice.", "Subtract the overlap once to get the union probability."],
+  },
+  {
+    id: "probability-independent-events",
+    title: "Independent events",
+    category: "probability",
+    equation: "P(A ∩ B) = P(A)·P(B), when A and B are independent",
+    description: "Find the chance that two independent events both occur.",
+    example: "0.25*0.5",
+    exampleLabel: "If P(A)=0.25 and P(B)=0.5 → 0.125",
+    steps: ["Independence means learning that A occurred does not change P(B).", "For each outcome in A, the fraction P(B) also satisfies B.", "Multiply the probabilities: P(A ∩ B) = P(A)P(B)."],
+  },
+  {
+    id: "probability-expected-value",
+    title: "Expected value",
+    category: "probability",
+    equation: "E[X] = Σ x·P(X = x)",
+    description: "Compute the long-run average for a discrete random variable.",
+    example: "0*0.25+1*0.5+2*0.25",
+    exampleLabel: "For outcomes 0, 1, 2 with probabilities 0.25, 0.5, 0.25 → 1",
+    steps: ["Multiply each possible outcome by its probability.", "Add all weighted outcomes.", "The result is the long-run average over repeated trials."],
   },
 ];
 
@@ -125,6 +276,8 @@ const formulaCategoryNames = {
   geometry: "Geometry",
   logarithms: "Logarithms",
   statistics: "Statistics",
+  calculus: "Calculus",
+  probability: "Probability",
 };
 
 let expression = "";
@@ -181,7 +334,7 @@ function renderFormulas() {
   const selectedCategory = formulaCategory.value;
   const matches = formulas.filter((formula) => {
     const matchesCategory = selectedCategory === "all" || formula.category === selectedCategory;
-    const searchableText = `${formula.title} ${formula.category} ${formula.equation} ${formula.description} ${formula.example}`.toLowerCase();
+    const searchableText = `${formula.title} ${formula.category} ${formula.equation} ${formula.description} ${formula.example} ${formula.exampleLabel ?? ""} ${formula.steps.join(" ")}`.toLowerCase();
     return matchesCategory && searchableText.includes(searchTerm);
   });
 
@@ -203,6 +356,9 @@ function renderFormulas() {
     const topic = document.createElement("span");
     const equation = document.createElement("p");
     const description = document.createElement("p");
+    const derivation = document.createElement("details");
+    const derivationSummary = document.createElement("summary");
+    const derivationSteps = document.createElement("ol");
     const exampleButton = document.createElement("button");
 
     card.className = "formula-card";
@@ -215,13 +371,21 @@ function renderFormulas() {
     equation.textContent = formula.equation;
     description.className = "formula-card__description";
     description.textContent = formula.description;
+    derivation.className = "formula-card__derivation";
+    derivationSummary.textContent = "How is it derived?";
+    for (const step of formula.steps) {
+      const item = document.createElement("li");
+      item.textContent = step;
+      derivationSteps.append(item);
+    }
+    derivation.append(derivationSummary, derivationSteps);
     exampleButton.className = "formula-card__example";
     exampleButton.type = "button";
     exampleButton.dataset.formulaId = formula.id;
-    exampleButton.textContent = formula.id === "simple-linear-regression" ? "Use sample data" : `Try example: ${formula.example}`;
+    exampleButton.textContent = formula.id === "simple-linear-regression" ? "Use sample data" : formula.exampleLabel ?? `Try example: ${formula.example}`;
     exampleButton.setAttribute("aria-label", formula.id === "simple-linear-regression" ? "Load sample data in the regression tool" : `Load example for ${formula.title}: ${formula.example}`);
     topline.append(title, topic);
-    card.append(topline, equation, description, exampleButton);
+    card.append(topline, equation, description, derivation, exampleButton);
     formulaList.append(card);
   }
 }
