@@ -43,42 +43,24 @@ body {
 
 body::before {
   position: fixed;
-  z-index: -1;
-  inset: -20%;
+  z-index: 0;
+  inset: -10%;
   content: "";
   pointer-events: none;
   background:
-    radial-gradient(ellipse at center, rgb(8 12 30 / 0%) 0 5%, rgb(12 13 37 / 30%) 7%, transparent 48%),
-    conic-gradient(from 12deg at 50% 50%,
-      transparent 0deg 22deg,
-      rgb(79 63 166 / 7%) 30deg,
-      rgb(146 100 225 / 21%) 42deg,
-      rgb(81 178 224 / 12%) 50deg,
-      transparent 61deg 104deg,
-      rgb(87 70 174 / 8%) 112deg,
-      rgb(166 108 232 / 20%) 126deg,
-      rgb(78 181 217 / 12%) 136deg,
-      transparent 149deg 203deg,
-      rgb(83 69 179 / 8%) 211deg,
-      rgb(151 104 228 / 19%) 226deg,
-      rgb(81 176 221 / 11%) 236deg,
-      transparent 249deg 294deg,
-      rgb(87 64 174 / 9%) 302deg,
-      rgb(160 106 231 / 20%) 316deg,
-      rgb(80 176 219 / 11%) 328deg,
-      transparent 340deg 360deg);
-  filter: blur(20px) saturate(145%);
-  opacity: 1;
-  transform: perspective(900px) rotateX(58deg) rotateZ(-12deg) scale(1.25);
+    linear-gradient(145deg, rgb(5 12 21 / 22%), rgb(5 11 20 / 46%)),
+    url("../assets/galaxy-m83.jpg") center 78% / cover no-repeat;
+  filter: saturate(1.2) contrast(1.08) brightness(0.84);
+  opacity: 0.88;
+  transform: scale(1.04);
   transform-origin: center;
-  -webkit-mask-image: radial-gradient(ellipse at center, #000 0 8%, rgb(0 0 0 / 88%) 28%, transparent 69%);
-  mask-image: radial-gradient(ellipse at center, #000 0 8%, rgb(0 0 0 / 88%) 28%, transparent 69%);
-  animation: galaxy-rotation 52s linear infinite, nebula-glow 6s ease-in-out infinite alternate;
+  will-change: transform, opacity;
+  animation: galaxy-pan 34s ease-in-out infinite alternate, galaxy-breathe 8s ease-in-out infinite alternate;
 }
 
 body::after {
   position: fixed;
-  z-index: -1;
+  z-index: 0;
   inset: -3%;
   content: "";
   pointer-events: none;
@@ -131,28 +113,6 @@ body::after {
   animation: star-twinkle 3s ease-in-out infinite alternate, starfield-depth 16s ease-in-out infinite alternate;
 }
 
-@keyframes galaxy-rotation {
-  from {
-    transform: perspective(900px) rotateX(58deg) rotateZ(-12deg) scale(1.25);
-  }
-
-  to {
-    transform: perspective(900px) rotateX(58deg) rotateZ(348deg) scale(1.25);
-  }
-}
-
-@keyframes nebula-glow {
-  from {
-    opacity: 0.62;
-    filter: blur(28px) saturate(90%);
-  }
-
-  to {
-    opacity: 1;
-    filter: blur(20px) saturate(130%);
-  }
-}
-
 button {
   font: inherit;
 }
@@ -187,6 +147,26 @@ button {
   }
 }
 
+@keyframes galaxy-pan {
+  from {
+    transform: scale(1.04) translate3d(0, 0, 0);
+  }
+
+  to {
+    transform: scale(1.14) translate3d(-1.2%, 0.8%, 0);
+  }
+}
+
+@keyframes galaxy-breathe {
+  from {
+    opacity: 0.72;
+  }
+
+  to {
+    opacity: 0.94;
+  }
+}
+
 @keyframes panel-enter {
   from {
     opacity: 0;
@@ -212,6 +192,8 @@ button {
 }
 
 .calculator {
+  position: relative;
+  z-index: 1;
   width: min(100%, 1020px);
   display: grid;
   grid-template-columns: minmax(0, 440px) minmax(0, 1fr);
@@ -221,9 +203,9 @@ button {
   border: 1px solid rgb(183 238 244 / 19%);
   border-radius: 28px;
   background:
-    linear-gradient(145deg, rgb(54 106 126 / 45%), rgb(19 44 63 / 56%));
-  -webkit-backdrop-filter: blur(24px) saturate(145%);
-  backdrop-filter: blur(24px) saturate(145%);
+    linear-gradient(145deg, rgb(54 106 126 / 16%), rgb(19 44 63 / 23%));
+  -webkit-backdrop-filter: blur(5px) saturate(145%);
+  backdrop-filter: blur(5px) saturate(145%);
   box-shadow:
     0 42px 100px rgb(0 0 0 / 42%),
     0 16px 34px rgb(7 8 18 / 20%),
@@ -239,9 +221,9 @@ button {
   border-radius: 22px;
   background:
     radial-gradient(ellipse at 88% 0%, rgb(126 234 228 / 16%), transparent 36%),
-    linear-gradient(155deg, rgb(47 94 112 / 53%), rgb(20 43 60 / 61%) 72%);
-  -webkit-backdrop-filter: blur(18px) saturate(135%);
-  backdrop-filter: blur(18px) saturate(135%);
+    linear-gradient(155deg, rgb(47 94 112 / 22%), rgb(20 43 60 / 29%) 72%);
+  -webkit-backdrop-filter: blur(5px) saturate(135%);
+  backdrop-filter: blur(5px) saturate(135%);
   box-shadow:
     inset 0 1px rgb(208 251 255 / 19%),
     inset 0 -1px rgb(255 255 255 / 4%),
@@ -257,10 +239,23 @@ button {
   padding: 8px;
   border: 1px solid rgb(182 235 243 / 13%);
   border-radius: 18px;
-  background: linear-gradient(145deg, rgb(20 49 65 / 42%), rgb(15 31 49 / 50%));
-  -webkit-backdrop-filter: blur(16px) saturate(130%);
-  backdrop-filter: blur(16px) saturate(130%);
+  background: linear-gradient(145deg, rgb(20 49 65 / 17%), rgb(15 31 49 / 24%));
+  -webkit-backdrop-filter: blur(5px) saturate(130%);
+  backdrop-filter: blur(5px) saturate(130%);
   animation: panel-enter 700ms 150ms cubic-bezier(0.2, 0.75, 0.25, 1) both;
+}
+
+.background-credit {
+  position: fixed;
+  right: 12px;
+  bottom: 8px;
+  z-index: 2;
+  margin: 0;
+  padding: 4px 7px;
+  border-radius: 5px;
+  background: rgb(5 12 20 / 62%);
+  color: rgb(220 231 236 / 76%);
+  font-size: 0.62rem;
 }
 
 .extras-tabs {
@@ -844,7 +839,7 @@ h1 {
   padding: 16px;
   border: 1px solid rgb(119 230 225 / 22%);
   border-radius: 14px;
-  background: linear-gradient(145deg, rgb(28 57 64 / 86%), rgb(18 38 50 / 88%));
+  background: linear-gradient(145deg, rgb(28 57 64 / 34%), rgb(18 38 50 / 44%));
   box-shadow: inset 0 1px rgb(255 255 255 / 7%), 0 10px 28px rgb(0 0 0 / 14%);
 }
 
