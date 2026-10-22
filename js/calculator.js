@@ -234,7 +234,13 @@ function activateExtrasTab(tabName, moveFocus = false) {
     if (isActive && moveFocus) tab.focus();
   }
   for (const panel of extrasPanels) {
-    panel.hidden = panel.id !== `panel-${tabName}`;
+    const isActive = panel.id === `panel-${tabName}`;
+    panel.hidden = !isActive;
+    panel.classList.remove("is-tab-entering");
+    if (isActive) {
+      void panel.offsetWidth;
+      panel.classList.add("is-tab-entering");
+    }
   }
 }
 
