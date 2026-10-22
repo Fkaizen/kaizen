@@ -13,6 +13,7 @@ Open `index.html` in any modern browser.
 - `index.html` — app entry point and search metadata
 - `css/styles.css` — application layout, theme, and transitions
 - `js/calculator.js` — calculator, formula search, regression solver, and chart export
+- `assets/galaxy-m83.jpg` — Hubble image of M83 (NASA, ESA, and the Hubble Heritage Team)
 - `assets/simple-linear-regression.svg` — regression analysis infographic
 - `assets/simple-linear-regression-chart.svg` — sample fitted chart export
 - `robots.txt` and `sitemap.xml` — crawler guidance for GitHub Pages
@@ -26,7 +27,7 @@ Open `index.html` in any modern browser.
 - Keyboard input, clear, delete, and sign toggle
 - Live result preview while entering expressions
 - Smooth result transitions during preview, calculation, and clear
-- 3D animated galaxy background with dense drifting stars, spiral nebula, and reduced-motion support
+- NASA/ESA Hubble galaxy background with slow cinematic motion, drifting stars, and reduced-motion support
 - Color feedback on keypad hover and when entering keys by keyboard
 - Smooth panel, formula-card, and guide transitions with reduced-motion support
 - Reusable previous answer and recent calculation history
