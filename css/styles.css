@@ -1372,6 +1372,18 @@ h1 {
   color: #a9f1d4;
 }
 
+.formula-card__topic[data-category="calculus"] {
+  border-color: rgb(95 214 240 / 28%);
+  background: rgb(43 171 207 / 13%);
+  color: #a6edff;
+}
+
+.formula-card__topic[data-category="probability"] {
+  border-color: rgb(255 202 104 / 28%);
+  background: rgb(218 151 54 / 13%);
+  color: #ffe0a3;
+}
+
 .formula-card__equation {
   margin: 10px 0 6px;
   padding: 8px 9px;
@@ -1389,6 +1401,38 @@ h1 {
   color: #aeb5c7;
   font-size: 0.7rem;
   line-height: 1.5;
+}
+
+.formula-card__derivation {
+  margin-top: 9px;
+  padding-top: 8px;
+  border-top: 1px solid rgb(220 230 240 / 10%);
+}
+
+.formula-card__derivation summary {
+  color: #9debe5;
+  cursor: pointer;
+  font-size: 0.68rem;
+  font-weight: 700;
+  transition: color 140ms ease;
+}
+
+.formula-card__derivation summary:hover {
+  color: #d2fffa;
+}
+
+.formula-card__derivation ol {
+  display: grid;
+  gap: 5px;
+  margin: 8px 0 0;
+  padding-left: 1.2rem;
+  color: #b8c5ce;
+  font-size: 0.68rem;
+  line-height: 1.5;
+}
+
+.formula-card__derivation[open] ol {
+  animation: content-enter 240ms ease-out both;
 }
 
 .formula-card__example {
