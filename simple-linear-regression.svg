@@ -1,0 +1,146 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-labelledby="title description">
+  <title id="title">Simple Linear Regression Analysis</title>
+  <desc id="description">An infographic showing study hours and exam scores with the fitted line y-hat equals 2 plus 1.5x and R-squared approximately 0.9712, along with residuals, coefficient interpretations, and an analysis workflow.</desc>
+  <defs>
+    <pattern id="fine-grid" width="32" height="32" patternUnits="userSpaceOnUse">
+      <path d="M32 0H0V32" fill="none" stroke="#ffffff" stroke-opacity=".025" stroke-width="1"/>
+    </pattern>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#142a32"/>
+      <stop offset="1" stop-color="#101c27"/>
+    </linearGradient>
+    <linearGradient id="chart-wash" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1c3940" stop-opacity=".88"/>
+      <stop offset="1" stop-color="#172a35" stop-opacity=".9"/>
+    </linearGradient>
+    <filter id="soft-shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="12" stdDeviation="18" flood-color="#050c12" flood-opacity=".24"/>
+    </filter>
+  </defs>
+
+  <rect width="1600" height="1000" fill="url(#background)"/>
+  <rect width="1600" height="1000" fill="url(#fine-grid)"/>
+  <path d="M0 0h1600v7H0z" fill="#e8aa62"/>
+
+  <g font-family="Arial, Helvetica, sans-serif">
+    <text x="88" y="76" fill="#e8aa62" font-size="15" font-weight="700" letter-spacing="2.6">STATISTICS / MODELING</text>
+    <text x="84" y="143" fill="#f3f1e9" font-family="Georgia, 'Times New Roman', serif" font-size="54" font-weight="700">Simple Linear Regression</text>
+    <text x="88" y="180" fill="#aebdc0" font-size="19">A straight-line model for describing how one variable changes with another.</text>
+    <text x="1510" y="83" fill="#8fa4a9" font-size="13" text-anchor="end" letter-spacing="1.8">THE BIG IDEA</text>
+    <text x="1510" y="113" fill="#f1ece0" font-family="Georgia, 'Times New Roman', serif" font-size="25" font-style="italic" text-anchor="end">fit a line, read the pattern</text>
+  </g>
+
+  <rect x="80" y="220" width="950" height="572" rx="12" fill="url(#chart-wash)" stroke="#719198" stroke-opacity=".25" filter="url(#soft-shadow)"/>
+  <g font-family="Arial, Helvetica, sans-serif">
+    <text x="118" y="261" fill="#f3f1e9" font-size="19" font-weight="700">Study time and exam score</text>
+    <text x="118" y="285" fill="#91a7aa" font-size="13">Illustrative observations · each dot is one student</text>
+
+    <g stroke="#d4e0dc" stroke-opacity=".12" stroke-width="1">
+      <path d="M180 334H950 M180 412H950 M180 490H950 M180 568H950 M180 646H950"/>
+      <path d="M334 310V646 M488 310V646 M642 310V646 M796 310V646 M950 310V646"/>
+    </g>
+    <g stroke="#b3c4c2" stroke-opacity=".7" stroke-width="1.5">
+      <path d="M180 310V646H950" fill="none"/>
+      <path d="M180 646l-6-9h12z" fill="#b3c4c2" stroke="none"/>
+      <path d="M950 646l-9-6v12z" fill="#b3c4c2" stroke="none"/>
+    </g>
+    <g fill="#9db0b2" font-size="12" text-anchor="end">
+      <text x="164" y="650">0</text>
+      <text x="164" y="572">5</text>
+      <text x="164" y="494">10</text>
+      <text x="164" y="416">15</text>
+      <text x="164" y="338">20</text>
+    </g>
+    <g fill="#9db0b2" font-size="12" text-anchor="middle">
+      <text x="180" y="670">0</text>
+      <text x="334" y="670">2</text>
+      <text x="488" y="670">4</text>
+      <text x="642" y="670">6</text>
+      <text x="796" y="670">8</text>
+      <text x="950" y="670">10</text>
+    </g>
+    <text x="563" y="706" fill="#d3dfdc" font-size="14" text-anchor="middle">Study time (hours)</text>
+    <text x="112" y="480" fill="#d3dfdc" font-size="14" text-anchor="middle" transform="rotate(-90 112 480)">Exam score (points)</text>
+
+    <g stroke="#e8aa62" stroke-opacity=".65" stroke-width="1.7" stroke-dasharray="5 6">
+      <path d="M257 576V592"/>
+      <path d="M334 584V568"/>
+      <path d="M796 443V428"/>
+      <path d="M873 389V404"/>
+    </g>
+    <path d="M180 615L950 381" fill="none" stroke="#69d6c5" stroke-width="4" stroke-linecap="round"/>
+    <g fill="#f0a66e" stroke="#142a32" stroke-width="3">
+      <circle cx="257" cy="576" r="7"/>
+      <circle cx="334" cy="584" r="7"/>
+      <circle cx="411" cy="545" r="7"/>
+      <circle cx="488" cy="521" r="7"/>
+      <circle cx="565" cy="498" r="7"/>
+      <circle cx="642" cy="475" r="7"/>
+      <circle cx="719" cy="451" r="7"/>
+      <circle cx="796" cy="443" r="7"/>
+      <circle cx="873" cy="389" r="7"/>
+    </g>
+
+    <g transform="translate(205 314)">
+      <rect width="210" height="56" rx="7" fill="#10232c" fill-opacity=".94" stroke="#69d6c5" stroke-opacity=".55"/>
+      <path d="M15 19h28" stroke="#69d6c5" stroke-width="3" stroke-linecap="round"/>
+      <text x="53" y="23" fill="#e4efeb" font-size="13" font-weight="700">Fitted line</text>
+      <text x="15" y="43" fill="#a9bdba" font-size="11.5">ŷ = 2 + 1.5x · R² = 0.9712</text>
+    </g>
+    <g transform="translate(205 720)">
+      <circle cx="7" cy="0" r="5" fill="#f0a66e"/>
+      <text x="20" y="5" fill="#a9bdba" font-size="12">observed score, y</text>
+      <path d="M177 0h24" stroke="#e8aa62" stroke-width="1.6" stroke-dasharray="4 4"/>
+      <text x="210" y="5" fill="#a9bdba" font-size="12">residual, y − ŷ</text>
+    </g>
+    <text x="900" y="746" fill="#69d6c5" font-size="12" text-anchor="end">Positive trend: more study time is associated with higher scores.</text>
+  </g>
+
+  <g font-family="Arial, Helvetica, sans-serif">
+    <rect x="1060" y="220" width="460" height="260" rx="12" fill="#18313a" stroke="#719198" stroke-opacity=".25" filter="url(#soft-shadow)"/>
+    <text x="1094" y="261" fill="#e8aa62" font-size="13" font-weight="700" letter-spacing="1.8">THE MODEL</text>
+    <text x="1094" y="318" fill="#f3f1e9" font-family="Georgia, 'Times New Roman', serif" font-size="39" font-style="italic">ŷ = β₀ + β₁x</text>
+    <path d="M1094 341H1486" stroke="#d7e2dc" stroke-opacity=".13"/>
+    <circle cx="1102" cy="373" r="4" fill="#69d6c5"/>
+    <text x="1117" y="378" fill="#e6ece6" font-size="15"><tspan font-weight="700">β₀</tspan><tspan fill="#aababc">  intercept · predicted y when x = 0</tspan></text>
+    <circle cx="1102" cy="410" r="4" fill="#f0a66e"/>
+    <text x="1117" y="415" fill="#e6ece6" font-size="15"><tspan font-weight="700">β₁</tspan><tspan fill="#aababc">  slope · change in predicted y per x unit</tspan></text>
+    <circle cx="1102" cy="447" r="4" fill="#e8aa62"/>
+    <text x="1117" y="452" fill="#e6ece6" font-size="15"><tspan font-weight="700">ε</tspan><tspan fill="#aababc">  error · variation not captured by the line</tspan></text>
+
+    <rect x="1060" y="500" width="460" height="292" rx="12" fill="#18313a" stroke="#719198" stroke-opacity=".25" filter="url(#soft-shadow)"/>
+    <text x="1094" y="541" fill="#e8aa62" font-size="13" font-weight="700" letter-spacing="1.8">HOW THE LINE IS FIT</text>
+    <text x="1094" y="579" fill="#e6ece6" font-size="15">Ordinary least squares chooses the line</text>
+    <text x="1094" y="602" fill="#e6ece6" font-size="15">that minimizes squared residuals:</text>
+    <text x="1094" y="651" fill="#f3f1e9" font-family="Georgia, 'Times New Roman', serif" font-size="28" font-style="italic">min Σ (yᵢ − ŷᵢ)²</text>
+    <path d="M1094 674H1486" stroke="#d7e2dc" stroke-opacity=".13"/>
+    <text x="1094" y="707" fill="#69d6c5" font-size="13" font-weight="700">CHECK BEFORE YOU INTERPRET</text>
+    <text x="1094" y="733" fill="#aababc" font-size="14">Linearity · independent errors · steady spread</text>
+    <text x="1094" y="756" fill="#aababc" font-size="14">Residual shape · influential observations</text>
+  </g>
+
+  <path d="M80 824H1520" stroke="#c7d4d0" stroke-opacity=".2"/>
+  <g font-family="Arial, Helvetica, sans-serif">
+    <text x="88" y="860" fill="#e8aa62" font-size="13" font-weight="700" letter-spacing="1.8">A PRACTICAL READ</text>
+    <g transform="translate(88 891)">
+      <text y="0" fill="#69d6c5" font-size="12" font-weight="700">01</text>
+      <text x="34" y="0" fill="#f3f1e9" font-size="15" font-weight="700">Plot the data</text>
+      <text x="34" y="23" fill="#9eb0b2" font-size="13">Look for a roughly linear pattern.</text>
+    </g>
+    <g transform="translate(470 891)">
+      <text y="0" fill="#69d6c5" font-size="12" font-weight="700">02</text>
+      <text x="34" y="0" fill="#f3f1e9" font-size="15" font-weight="700">Fit the line</text>
+      <text x="34" y="23" fill="#9eb0b2" font-size="13">Estimate the intercept and slope.</text>
+    </g>
+    <g transform="translate(852 891)">
+      <text y="0" fill="#69d6c5" font-size="12" font-weight="700">03</text>
+      <text x="34" y="0" fill="#f3f1e9" font-size="15" font-weight="700">Inspect residuals</text>
+      <text x="34" y="23" fill="#9eb0b2" font-size="13">Check assumptions and unusual points.</text>
+    </g>
+    <g transform="translate(1234 891)">
+      <text y="0" fill="#69d6c5" font-size="12" font-weight="700">04</text>
+      <text x="34" y="0" fill="#f3f1e9" font-size="15" font-weight="700">Use with care</text>
+      <text x="34" y="23" fill="#9eb0b2" font-size="13">Association does not prove causation.</text>
+    </g>
+  </g>
+</svg>

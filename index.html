@@ -1,0 +1,210 @@
+    <!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0b1722" />
+    <title>Scientific Calculator</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="calculator.js" defer></script>
+  </head>
+  <body>
+    <main class="calculator" aria-label="Scientific calculator">
+      <section class="calculator__workarea" aria-label="Calculator">
+        <header class="calculator__header">
+          <div>
+            <p class="eyebrow">PRECISION TOOL</p>
+            <h1>Calculator</h1>
+          </div>
+          <button class="mode-toggle" id="mode-toggle" type="button" aria-label="Angle mode: degrees">
+            DEG
+          </button>
+        </header>
+
+        <section class="display" aria-label="Calculator display">
+          <div class="display__meta">
+            <div class="display__expression" id="expression" aria-label="Expression" aria-live="polite"></div>
+            <span class="display__status" id="display-status" aria-hidden="true"></span>
+          </div>
+          <output class="display__result" id="result" aria-live="polite">0</output>
+        </section>
+
+        <section class="keypad" aria-label="Calculator keypad">
+          <div class="keypad__scientific" aria-label="Scientific functions">
+            <span class="keypad__label">SCIENTIFIC</span>
+            <button class="key key--function" data-value="sin(" type="button">sin</button>
+            <button class="key key--function" data-value="cos(" type="button">cos</button>
+            <button class="key key--function" data-value="tan(" type="button">tan</button>
+            <button class="key key--function" data-value="sqrt(" type="button">√</button>
+            <button class="key key--function" data-value="log(" type="button">log</button>
+            <button class="key key--function" data-value="asin(" type="button">sin⁻¹</button>
+            <button class="key key--function" data-value="acos(" type="button">cos⁻¹</button>
+            <button class="key key--function" data-value="atan(" type="button">tan⁻¹</button>
+            <button class="key key--function" data-value="ln(" type="button">ln</button>
+            <button class="key key--function" data-value="!" type="button">x!</button>
+            <button class="key key--function" data-value="^" type="button">xʸ</button>
+            <button class="key key--function" data-value="^2" type="button">x²</button>
+            <button class="key key--function" data-value="abs(" type="button">|x|</button>
+            <button class="key key--function" data-value="pi" type="button">π</button>
+            <button class="key key--function" data-value="e" type="button">e</button>
+            <button class="key key--function" data-value="(" type="button">(</button>
+            <button class="key key--function" data-value=")" type="button">)</button>
+            <button class="key key--function" data-value="%" type="button">mod</button>
+            <button class="key key--function key--answer" data-value="ans" type="button" aria-label="Insert previous answer">Ans</button>
+          </div>
+          <div class="keypad__main" aria-label="Numbers and basic operations">
+            <span class="keypad__label">BASIC</span>
+            <button class="key key--utility" data-action="clear" type="button">AC</button>
+            <button class="key key--utility" data-action="delete" type="button" aria-label="Delete last character">DEL</button>
+            <button class="key key--utility" data-action="sign" type="button">+/−</button>
+            <button class="key key--operator" data-value="/" type="button">÷</button>
+
+            <button class="key" data-value="7" type="button">7</button>
+            <button class="key" data-value="8" type="button">8</button>
+            <button class="key" data-value="9" type="button">9</button>
+            <button class="key key--operator" data-value="*" type="button">×</button>
+
+            <button class="key" data-value="4" type="button">4</button>
+            <button class="key" data-value="5" type="button">5</button>
+            <button class="key" data-value="6" type="button">6</button>
+            <button class="key key--operator" data-value="-" type="button">−</button>
+
+            <button class="key" data-value="1" type="button">1</button>
+            <button class="key" data-value="2" type="button">2</button>
+            <button class="key" data-value="3" type="button">3</button>
+            <button class="key key--operator" data-value="+" type="button">+</button>
+
+            <button class="key key--zero" data-value="0" type="button">0</button>
+            <button class="key" data-value="." type="button">.</button>
+            <button class="key key--operator key--equals" data-action="equals" type="button">=</button>
+          </div>
+        </section>
+        <p class="hint">Tip: use * for multiplication and / for division.</p>
+      </section>
+
+      <aside class="calculator__extras" aria-label="Regression tool, history, and formula reference">
+        <div class="extras-tabs" role="tablist" aria-label="Calculator tools">
+          <button class="extras-tabs__tab" id="tab-regression" type="button" role="tab" aria-selected="true" aria-controls="panel-regression" tabindex="0" data-tab="regression">Regression</button>
+          <button class="extras-tabs__tab" id="tab-history" type="button" role="tab" aria-selected="false" aria-controls="panel-history" tabindex="-1" data-tab="history">History</button>
+          <button class="extras-tabs__tab" id="tab-formulas" type="button" role="tab" aria-selected="false" aria-controls="panel-formulas" tabindex="-1" data-tab="formulas">Formulas</button>
+        </div>
+
+        <section class="regression extras-panel" id="panel-regression" role="tabpanel" tabindex="0" aria-labelledby="tab-regression">
+          <div class="regression__header">
+            <div>
+              <p class="eyebrow">STATISTICS TOOL</p>
+              <h2 id="regression-title">Linear regression</h2>
+            </div>
+            <span class="regression__mark" aria-hidden="true">ŷ</span>
+          </div>
+          <p class="regression__hint">Enter paired values in order. Separate numbers with commas or spaces.</p>
+          <form class="regression__form" id="regression-form">
+            <label class="regression__field" for="regression-x">X values
+              <textarea id="regression-x" rows="2" spellcheck="false">1, 2, 3, 4, 5</textarea>
+            </label>
+            <label class="regression__field" for="regression-y">Y values
+              <textarea id="regression-y" rows="2" spellcheck="false">4, 5, 8, 8, 12</textarea>
+            </label>
+            <div class="regression__actions">
+              <button class="regression__solve" type="submit">Fit line</button>
+              <button class="regression__sample" id="regression-sample" type="button">Use sample</button>
+            </div>
+          </form>
+          <p class="regression__message" id="regression-message" role="status" aria-live="polite">Add your data, then fit a line.</p>
+          <div class="regression__output" id="regression-output" hidden>
+            <svg class="regression__chart" id="regression-chart" viewBox="0 0 360 230" role="img" aria-label="Scatterplot with fitted regression line"></svg>
+            <p class="regression__equation" id="regression-equation"></p>
+            <div class="regression__stats">
+              <span id="regression-count"></span>
+              <span id="regression-r-squared"></span>
+            </div>
+            <button class="regression__download" id="regression-download" type="button">Download chart (SVG)</button>
+            <div class="regression__predict">
+              <label for="regression-estimate">Predict y at x =</label>
+              <input id="regression-estimate" type="number" step="any" value="6" />
+              <button class="regression__predict-button" id="regression-predict" type="button" disabled>Calculate</button>
+            </div>
+          </div>
+        </section>
+
+        <section class="history extras-panel" id="panel-history" role="tabpanel" tabindex="0" aria-labelledby="tab-history" aria-label="Calculation history" hidden>
+        <div class="history__header">
+          <h2>History</h2>
+          <button class="history__clear" id="clear-history" type="button" disabled>Clear</button>
+        </div>
+        <ol class="history__list" id="history-list" aria-live="polite">
+          <li class="history__empty">Your calculations will appear here.</li>
+        </ol>
+        </section>
+
+        <section class="formula-library extras-panel" id="panel-formulas" role="tabpanel" tabindex="0" aria-labelledby="tab-formulas" hidden>
+        <div class="formula-library__header">
+          <div>
+            <p class="eyebrow">QUICK REFERENCE</p>
+            <h2 id="formula-title">Formula library</h2>
+          </div>
+          <span class="formula-library__count" id="formula-count" aria-live="polite"></span>
+        </div>
+        <div class="formula-library__filters">
+          <label class="sr-only" for="formula-search">Search formulas</label>
+          <input class="formula-search" id="formula-search" type="search" placeholder="Search formulas or topics…" autocomplete="off" />
+          <label class="sr-only" for="formula-category">Filter formulas by topic</label>
+          <select class="formula-category" id="formula-category">
+            <option value="all">All topics</option>
+            <option value="algebra">Algebra</option>
+            <option value="trigonometry">Trigonometry</option>
+            <option value="geometry">Geometry</option>
+            <option value="logarithms">Logarithms</option>
+            <option value="statistics">Statistics</option>
+          </select>
+        </div>
+        <p class="formula-library__hint">Pick a topic or search, then try an example.</p>
+        <div class="formula-list" id="formula-list" aria-live="polite"></div>
+        </section>
+
+        <details class="guide">
+        <summary><span class="guide__summary-title">Calculator guide</span><span class="guide__summary-caption">Quick steps and key reference</span></summary>
+        <div class="guide__content">
+          <section class="guide__section">
+            <span class="guide__step">01</span>
+            <div>
+              <h2>Enter and calculate</h2>
+              <p>Type or tap an expression to see its live preview. Press <kbd>Enter</kbd> or <strong>=</strong> to save it to history. Use parentheses to group parts, like <code>(2+3)*4</code>.</p>
+            </div>
+          </section>
+          <section class="guide__section">
+            <span class="guide__step">02</span>
+            <div>
+              <h2>Use scientific functions</h2>
+              <p>Functions take a value in parentheses: <code>sin(30)</code>, <code>sqrt(81)</code>, <code>log(100)</code>, <code>ln(e)</code>, or <code>abs(-4)</code>. Inverse trig functions are <code>asin</code>, <code>acos</code>, and <code>atan</code>.</p>
+              <p>Choose <strong>DEG</strong> or <strong>RAD</strong> for trig angle units. In DEG mode, <code>sin(30)</code> equals <code>0.5</code>.</p>
+            </div>
+          </section>
+          <section class="guide__section">
+            <span class="guide__step">03</span>
+            <div>
+              <h2>Operators and constants</h2>
+              <p><code>+</code> add · <code>-</code> subtract · <code>*</code> multiply · <code>/</code> divide · <code>%</code> remainder · <code>^</code> power · <code>!</code> factorial.</p>
+              <p>Use <code>pi</code>, <code>e</code>, and <code>Ans</code> for constants and your last result. Write multiplication explicitly, for example <code>2*pi</code>.</p>
+            </div>
+          </section>
+          <section class="guide__section">
+            <span class="guide__step">04</span>
+            <div>
+              <h2>Browse formulas and history</h2>
+              <p>Search or filter the formula library, then choose <strong>Try example</strong> to load it. Select a history item to restore an expression; press <strong>Clear</strong> to remove the list.</p>
+            </div>
+          </section>
+          <div class="guide__shortcuts">
+            <span class="guide__shortcuts-label">KEYBOARD</span>
+            <span><kbd>Enter</kbd> calculate</span>
+            <span><kbd>Esc</kbd> clear</span>
+            <span><kbd>Backspace</kbd> delete</span>
+          </div>
+          <p class="guide__note">Factorials accept non-negative whole numbers. Invalid operations, such as dividing by zero, show an error.</p>
+        </div>
+        </details>
+      </aside>
+    </main>
+  </body>
+</html>
