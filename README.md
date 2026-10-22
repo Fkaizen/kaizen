@@ -32,6 +32,8 @@ Open `index.html` in any modern browser.
 - Smooth panel, formula-card, and guide transitions with reduced-motion support
 - Reusable previous answer and recent calculation history
 - Searchable formula library with calculator-ready examples
+- Formula topics: algebra, trigonometry, geometry, logarithms, statistics, calculus, and probability
+- Expandable step-by-step derivations and numeric examples for each formula
 - Safe expression parsing without `eval`
 - Simple linear regression from paired X and Y values
 - Fitted equation, R², residual plot, and prediction through the calculator
@@ -40,7 +42,7 @@ Open `index.html` in any modern browser.
 
 The calculator supports expressions such as `sin(30)`, `sqrt(81)`, `2^8`, and `5!`. Use `*` and `/` for multiplication and division.
 
-The formula library has searchable topic filters and one-click examples. The regression tool accepts comma- or space-separated paired values, fits a least-squares line, and lets you predict a Y value for a chosen X. Download the current chart as an SVG. The expandable calculator guide groups usage tips into short steps and highlights keyboard shortcuts.
+The formula library has searchable topic filters, one-click examples, and expandable derivation steps. Calculus and probability topics include derivative rules, limits, integrals, probability rules, and expected value. The regression tool accepts comma- or space-separated paired values, fits a least-squares line, and lets you predict a Y value for a chosen X. Download the current chart as an SVG. The expandable calculator guide groups usage tips into short steps and highlights keyboard shortcuts.
 
 ## Quick guide
 
