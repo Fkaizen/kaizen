@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://fkaizen.github.io/kaizen/sitemap.xml
