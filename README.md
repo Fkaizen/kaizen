@@ -8,6 +8,15 @@ The calculator includes a searchable formula library, calculation history, and r
 
 Open `index.html` in any modern browser.
 
+## Project structure
+
+- `index.html` — app entry point and search metadata
+- `css/styles.css` — application layout, theme, and transitions
+- `js/calculator.js` — calculator, formula search, regression solver, and chart export
+- `assets/simple-linear-regression.svg` — regression analysis infographic
+- `assets/simple-linear-regression-chart.svg` — sample fitted chart export
+- `robots.txt` and `sitemap.xml` — crawler guidance for GitHub Pages
+
 ## Features
 
 - Arithmetic, parentheses, powers, modulo, and factorial
